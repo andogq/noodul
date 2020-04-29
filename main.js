@@ -93,6 +93,11 @@ function init() {
 
     document.getElementById("restart").addEventListener("click", start);
 
+    // Hide the prompt after 3 seconds
+    setTimeout(() => {
+        document.getElementById("prompt").classList.add("hidden");
+    }, 3000)
+
     start();
 }
 
