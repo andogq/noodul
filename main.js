@@ -81,8 +81,9 @@ function init() {
     document.body.addEventListener("click", (e) => {
         if (e.target == edit) edit.classList.add("hidden");
         else edit.classList.remove("hidden");
-
     });
+
+    document.getElementById("restart").addEventListener("click", start);
 
     start();
 }

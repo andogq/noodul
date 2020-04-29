@@ -31,16 +31,18 @@ class Canvas {
      *  Getters and setters
      */
     set height(h) {
-        this._height = h;
-        this.el.height = h;
+        this._height = h * 2;
+        this.el.height = h * 2;
+        this.el.style.height = h + "px";
     }
     get height() {
         return this._height;
     }
 
     set width(w) {
-        this._width = w;
-        this.el.width = w;
+        this._width = w * 2;
+        this.el.width = w * 2;
+        this.el.style.width = w + "px";
     }
     get width() {
         return this._width;
