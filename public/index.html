@@ -128,6 +128,25 @@
     <p id="prompt">Tap the screen for options</p>
 
     <div>
+        <script src="https://www.gstatic.com/firebasejs/7.14.2/firebase-app.js"></script>
+
+        <script src="https://www.gstatic.com/firebasejs/7.14.2/firebase-analytics.js"></script>
+
+        <script>
+        var firebaseConfig = {
+            apiKey: "AIzaSyAdExkx_74fx95ilenrKsB2RypMG0Nf86Y",
+            authDomain: "andogq.firebaseapp.com",
+            databaseURL: "https://andogq.firebaseio.com",
+            projectId: "andogq",
+            storageBucket: "andogq.appspot.com",
+            messagingSenderId: "166019142024",
+            appId: "1:166019142024:web:9b3adb67abc2950f45ea3d",
+            measurementId: "G-W2HL7EYP43"
+        };
+        firebase.initializeApp(firebaseConfig);
+        firebase.analytics();
+        </script>
+
         <script src="class/canvas.js"></script>
         <script src="class/vector.js"></script>
         <script src="class/mover.js"></script>

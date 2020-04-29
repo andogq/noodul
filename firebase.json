@@ -1,0 +1,11 @@
+{
+  "hosting": {
+    "site": "andogq-noodul",
+    "public": "public",
+    "ignore": [
+      "firebase.json",
+      "**/.*",
+      "**/node_modules/**"
+    ]
+  }
+}
