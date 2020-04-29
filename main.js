@@ -68,6 +68,7 @@ function init() {
     let edit = document.getElementById("edit");
     Object.keys(parameters).forEach((key) => {
         let row = document.createElement("div");
+        row.classList.add("row");
 
         let name = document.createElement("h3");
         name.innerText = key;

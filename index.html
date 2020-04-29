@@ -37,7 +37,7 @@
         #game {
             transition: none;
         }
-        
+
         #game, #edit {
             position: fixed;
             top: 0;
@@ -60,7 +60,7 @@
             margin-bottom: 1em;
         }
 
-        #edit > div {
+        #edit > .row {
             width: 40%;
             display: grid;
             grid: 1fr / 1fr auto;
@@ -81,21 +81,27 @@
             cursor: pointer;
         }
 
+        #about {
+            position: fixed;
+            bottom: 5%;
+            right: 5%;
+            font-size: 0.75em;
+            cursor: pointer;
+        }
+
         .hidden {
             opacity: 0;
             pointer-events: none;
         }
 
-        @media (max-width: 800px) {
-            #edit > div {
-                width: 60%;
-
+        @media (max-width: 600px) {
+            #edit > .row {
+                width: 90%;
             }
         }
-        @media (max-width: 600px) {
-            #edit > div {
-                width: 90%;
-
+        @media (min-width: 600px) and (max-width: 800px) {
+            #edit > .row {
+                width: 60%;
             }
         }
     </style>
@@ -105,6 +111,9 @@
 
     <div id="edit" class="hidden">
         <h3 id="restart">&olarr;</h3>
+        <div id="about">
+            Made by <a href="https://ando.gq">ando.gq</a>
+        </div>
         <h1>Edit</h1>
     </div>
 
