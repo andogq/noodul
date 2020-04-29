@@ -1,11 +1,12 @@
 // Parameters
 const parameters = {
-    "Object Count": 50,
+    "Object Count": 10,
     "Max Weight": 100,
     "Gravitational Strength": 100,
     "Max Force": 10,
     "Center Weight": 1000,
-    "Tail Length": 100
+    "Tail Length": 50,
+    "Thickness": 5
 }
 
 // Globals
@@ -49,7 +50,13 @@ function update(ctx) {
 function start() {
     objects = [];
     for (let i = 0; i < parameters["Object Count"]; i++) {
-        objects.push(new Mover(r(canvas.width), r(canvas.height), r(parameters["Max Weight"]), parameters["Tail Length"]));
+        objects.push(new Mover(
+            r(canvas.width),
+            r(canvas.height),
+            r(parameters["Max Weight"]) + 1,
+            parameters["Tail Length"],
+            parameters["Thickness"]
+        ));
     }
 
 }
@@ -79,7 +86,7 @@ function init() {
     });
 
     document.body.addEventListener("click", (e) => {
-        if (e.target == edit) edit.classList.add("hidden");
+        if (e.target == edit || e.target == document.getElementById("restart")) edit.classList.add("hidden");
         else edit.classList.remove("hidden");
     });
 

@@ -1,5 +1,5 @@
 class Mover {
-    constructor(x, y, mass = 10, tailLength = 20) {
+    constructor(x, y, mass = 10, tailLength = 20, thickness = 1) {
         this.pos = new Vector(x, y);
         this.vel = new Vector(0, 0);
         this.mass = mass;
@@ -10,6 +10,8 @@ class Mover {
 
         this.tailLength = tailLength;
         this.tail = [];
+
+        this.thickness = thickness;
     }
 
     update(ctx) {
@@ -25,11 +27,13 @@ class Mover {
         this.force = new Vector();
 
         // Draw
-        this.tail.forEach((t) => {
-            ctx.beginPath();
-            ctx.fillStyle = this.color;
-            ctx.arc(t.x, t.y, 1, 0, 2 * Math.PI)
-            ctx.fill();
+        ctx.beginPath();
+        ctx.strokeStyle = this.color;
+        ctx.lineWidth = this.thickness;
+        ctx.moveTo(this.tail[0].x, this.tail[0].y);
+        this.tail.forEach((t, i) => {
+            if (i != 0) ctx.lineTo(t.x, t.y);
         });
+        ctx.stroke();
     }
 }

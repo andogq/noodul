@@ -9,6 +9,8 @@ class Canvas {
         this.callbacks = [];
         this.objects = [];
 
+        window.addEventListener("resize", this.resize.bind(this));
+
         this.update();
     }
 
