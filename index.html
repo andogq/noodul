@@ -5,27 +5,77 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,700&display=swap">
     <style>
         * {
             padding: 0;
             margin: 0;
+
+            color: white;
+            font-family: "Open Sans", sans-serif;
+
+            transition: all 0.5s;
         }
         html, body {
             height: 100%;
             width: 100%;
         }
+        
+        input {
+            background: none;
+            border: none;
+            font-size: 1em;
+        }
+        input:focus {
+            outline: none;
+        }
 
-        #game {
+        #game, #edit {
             position: fixed;
             top: 0;
             left: 0;
             right: 0;
             bottom: 0;
         }
+
+        #edit {
+            background: rgba(0, 0, 0, 0.5);
+            font-size: 1em;
+
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        #edit > h1 {
+            margin-bottom: 1em;
+        }
+
+        #edit > div {
+            width: 40%;
+            display: grid;
+            grid: 1fr / 1fr auto;
+            border-top: 1px dashed white;
+            padding: 1em;
+        }
+
+        #edit > div:last-child {
+            border-bottom: 1px dashed white;
+        }
+
+        .hidden {
+            opacity: 0;
+            pointer-events: none;
+        }
     </style>
 </head>
 <body>
     <canvas id="game"></canvas>
+
+    <div id="edit" class="hidden">
+        <h1>Edit</h1>
+    </div>
 
     <div>
         <script src="class/canvas.js"></script>
